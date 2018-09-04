@@ -1,0 +1,31 @@
+
+
+<% @body_id = 'home-page' %>
+<% content_for :sidebar do %>
+  <div data-hook="homepage_sidebar_navigation">
+    <%= render partial: 'spree/shared/taxonomies' %>
+  </div>
+<% end %>
+
+<div data-hook="homepage_products">
+  <%= react_component("index", {
+      songs: [
+          'Song 1',
+          'Song 2',
+          'Song 3'
+      ],
+      playlists: [
+          'My home',
+          'Driver'
+      ],
+      location: request.fullpath
+  }, prerender: true) %>
+
+
+  <% cache(cache_key_for_products) do %>
+    <%= render partial: 'spree/shared/products', locals: { products: @products } %>
+  <% end %>
+</div>
+
+
+

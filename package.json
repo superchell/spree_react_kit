@@ -1,0 +1,28 @@
+{
+  "name": "spree_kit",
+  "private": true,
+  "scripts": {
+    "start": "~/go/bin/overmind start -f Procfile.dev"
+  },
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "babel-preset-react": "^6.24.1",
+    "connected-react-router": "^4.4.1",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
+    "react_ujs": "^2.4.4",
+    "redux": "^4.0.0",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "eslint": "^5.5.0",
+    "eslint-plugin-react": "^7.11.1",
+    "prop-types": "^15.6.2",
+    "redux-devtools-extension": "^2.13.5",
+    "webpack-dev-server": "2.11.2"
+  }
+}
