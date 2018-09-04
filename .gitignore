@@ -6,7 +6,7 @@
 
 # Ignore bundler config.
 /.bundle
-.idea
+/.idea/*
 .ruby-version
 /log
 /tmp
