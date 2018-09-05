@@ -8,6 +8,7 @@
     "@rails/webpacker": "3.5",
     "babel-preset-react": "^6.24.1",
     "connected-react-router": "^4.4.1",
+    "gsap": "^2.0.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
@@ -15,7 +16,8 @@
     "react-router-dom": "^4.3.1",
     "react_ujs": "^2.4.4",
     "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

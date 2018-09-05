@@ -6,6 +6,7 @@
 <!--[if gt IE 9]><!--><html lang="<%= I18n.locale %>"><!--<![endif]-->
   <head data-hook="inside_head">
     <%= render partial: 'spree/shared/head' %>
+    <%= stylesheet_pack_tag 'application' %>
   </head>
   <body>
      <%= yield %>

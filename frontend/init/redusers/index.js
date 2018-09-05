@@ -1,11 +1,9 @@
 import { combineReducers } from 'redux';
 
-import songs from './songs';
-import playlists from './playlists';
+import products from './products';
 import data from './data';
 
 export default combineReducers({
-    songs,
-    playlists,
+    products,
     data,
 });

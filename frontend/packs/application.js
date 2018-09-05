@@ -1,5 +1,9 @@
-// Support component names relative to this directory:
-var componentRequireContext = require.context("init", true)
-var ReactRailsUJS = require("react_ujs")
-ReactRailsUJS.useContext(componentRequireContext)
+import gsap from 'gsap';
 
+window.gsap = gsap;
+
+// Support component names relative to this directory:
+const componentRequireContext = require.context("init", true);
+const ReactRailsUJS = require("react_ujs");
+
+ReactRailsUJS.useContext(componentRequireContext);
