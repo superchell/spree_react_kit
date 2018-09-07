@@ -7,6 +7,7 @@ import Router from '../Router';
 //Instruments
 import redusers from '../redusers';
 import Routes from '../Router/Routes';
+import Catcher from "../components/Catcher";
 
 export default class ClientApp extends Component {
     render () {
@@ -21,11 +22,13 @@ export default class ClientApp extends Component {
         );
 
         return (
-            <Provider store = { store }>
-                <Router location = { location }>
-                    <Routes />
-                </Router>
-            </Provider>
+            <Catcher>
+                <Provider store = { store }>
+                    <Router location = { location }>
+                        <Routes />
+                    </Router>
+                </Provider>
+            </Catcher>
         );
     }
 }

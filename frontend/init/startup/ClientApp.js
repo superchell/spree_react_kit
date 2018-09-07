@@ -4,13 +4,16 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+
+//Routing
 import Router from '../Router';
 import { connectRouter, routerMiddleware } from 'connected-react-router';
 import { createBrowserHistory } from 'history';
+import Routes from '../Router/Routes';
 
 //Instruments
 import redusers from '../redusers';
-import Routes from '../Router/Routes';
+import Catcher from "../components/Catcher";
 
 export default class ClientApp extends Component {
     render () {
@@ -23,20 +26,27 @@ export default class ClientApp extends Component {
         const store = createStore(
             connectRouter(history)(redusers),
             initialState,
-            composeWithDevTools(
-                applyMiddleware(
+            process.env.NODE_ENV === 'development'
+                ? composeWithDevTools(
+                    applyMiddleware(
+                        routerMiddleware(history),
+                        thunk
+                    )
+                )
+                : applyMiddleware(
                     routerMiddleware(history),
                     thunk
                 )
-            )
         );
 
         return (
-            <Provider store = { store }>
-                <Router history = { history } >
-                    <Routes />
-                </Router>
-            </Provider>
+            <Catcher>
+                <Provider store = { store }>
+                    <Router history = { history } >
+                        <Routes />
+                    </Router>
+                </Provider>
+            </Catcher>
         );
     }
 }

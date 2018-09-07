@@ -1,4 +1,4 @@
 # ~/go/bin/overmind start -f Procfile.dev
 server: bin/rails server
 assets: bin/webpack-dev-server
-# assets: NODE_ENV=production ./bin/webpack --watch --colors --progres
+#assets: NODE_ENV=production ./bin/webpack --watch --colors
