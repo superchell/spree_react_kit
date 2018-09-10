@@ -3,8 +3,7 @@
 <%= react_component("index", {
     product: {
         data: @product.as_json,
-        img: @product.images.as_json,
-        isFetched: true
+        isServer: true
     },
     location: request.fullpath
 }, prerender: true) %>

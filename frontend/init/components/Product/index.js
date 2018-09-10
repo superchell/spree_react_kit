@@ -1,37 +1,45 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
-import { bindActionCreators } from 'redux';
 
+//Components
 import Catcher from "../Catcher";
+import Spiner from '../Spiner';
+import Seo from '../Seo';
 
+//Instrumetns
 import Styles from './style.scss';
-import { fetchProduct } from '../../actions';
+import { SERVER_FLAG_TO_FALSE, START_FETCH_PRODUCT } from '../../types';
 
 class Product extends Component {
 
     componentDidMount () {
-        const { actions, product } = this.props;
+        const { actions, product, cleanProduct } = this.props;
         const { slug } = this.props.match.params;
+
+        actions.cleanProduct();
 
         if (!product.isFetched) {
             actions.fetchProduct(slug);
         }
-
     }
 
     render () {
-        const { product } = this.props;
+        const { product, spinner } = this.props;
 
         return (
             <Catcher>
-                <div className = 'product'>
+                <Spiner>
+                    <div>New</div>
                     {
                         product.data ? (
-                            <h2>{ product.data.name }</h2>
+                            <div className = 'product'>
+                                <Seo title = { product.data.name } />
+                                <h2 className = { Styles.header }>{ product.data.name }</h2>
+                            </div>
                         ) : null
                     }
-                </div>
+                </Spiner>
             </Catcher>
         );
     }
@@ -46,7 +54,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         actions: {
-            fetchProduct: bindActionCreators(fetchProduct, dispatch),
+            fetchProduct (slug) {
+                dispatch({ type: START_FETCH_PRODUCT, payload: slug });
+            },
+            cleanProduct () {
+                dispatch({ type: SERVER_FLAG_TO_FALSE });
+            },
         },
     };
 };

@@ -2,7 +2,10 @@
   "name": "spree_kit",
   "private": true,
   "scripts": {
-    "start": "~/go/bin/overmind start -f Procfile.dev"
+    "start": "~/go/bin/overmind start -f Procfile.dev",
+    "test": "jest --config=\"./frontend/jest/jest.test.config.json\"",
+    "test:watch": "npm test -- --watch",
+    "soundcheck": "jest --config=\"./frontend/jest/jest.config.json\""
   },
   "dependencies": {
     "@rails/webpacker": "3.5",
@@ -16,14 +19,24 @@
     "react-router-dom": "^4.3.1",
     "react_ujs": "^2.4.4",
     "redux": "^4.0.0",
+    "redux-saga": "^0.16.0",
     "redux-thunk": "^2.3.0",
     "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
+    "babel-jest": "^23.4.2",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-polyfill": "^6.26.0",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "^5.5.0",
     "eslint-plugin-react": "^7.11.1",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^23.5.0",
+    "jest-runner-eslint": "^0.6.0",
+    "jest-runner-stylelint": "^1.0.0",
     "prop-types": "^15.6.2",
     "redux-devtools-extension": "^2.13.5",
     "webpack-dev-server": "2.11.2"

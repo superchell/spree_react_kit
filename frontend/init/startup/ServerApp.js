@@ -2,12 +2,12 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import Router from '../Router';
 
 //Instruments
 import redusers from '../redusers';
 import Routes from '../Router/Routes';
 import Catcher from "../components/Catcher";
+import { StaticRouter } from 'react-router-dom';
 
 export default class ClientApp extends Component {
     render () {
@@ -24,9 +24,9 @@ export default class ClientApp extends Component {
         return (
             <Catcher>
                 <Provider store = { store }>
-                    <Router location = { location }>
+                    <StaticRouter context = { {} } location = { location }>
                         <Routes />
-                    </Router>
+                    </StaticRouter>
                 </Provider>
             </Catcher>
         );

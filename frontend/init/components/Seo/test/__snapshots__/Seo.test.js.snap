@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Компонент Scheduler: должен иметь базовую разметку JSX: должен соответствовать снепшоту разметки 1`] = `
+<HelmetWrapper
+  defer={true}
+  encodeSpecialCharacters={true}
+>
+  <title />
+</HelmetWrapper>
+`;
