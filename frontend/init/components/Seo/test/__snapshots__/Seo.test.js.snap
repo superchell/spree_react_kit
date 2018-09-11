@@ -1,10 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Компонент Scheduler: должен иметь базовую разметку JSX: должен соответствовать снепшоту разметки 1`] = `
-<HelmetWrapper
-  defer={true}
-  encodeSpecialCharacters={true}
+exports[`Компонент Seo: должен иметь базовую разметку JSX: должен соответствовать снепшоту разметки 1`] = `
+<Seo
+  title="TestString"
 >
-  <title />
-</HelmetWrapper>
+  <HelmetWrapper
+    defer={true}
+    encodeSpecialCharacters={true}
+  >
+    <SideEffect(NullComponent)
+      defer={true}
+      encodeSpecialCharacters={true}
+      title="TestString"
+      titleAttributes={Object {}}
+    >
+      <NullComponent
+        defer={true}
+        encodeSpecialCharacters={true}
+        title="TestString"
+        titleAttributes={Object {}}
+      />
+    </SideEffect(NullComponent)>
+  </HelmetWrapper>
+</Seo>
 `;

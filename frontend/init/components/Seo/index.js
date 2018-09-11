@@ -7,7 +7,7 @@ export default class Seo extends Component {
 
         return (
             <Helmet>
-                <title>{title}</title>
+                <title>{ title }</title>
             </Helmet>
         );
     }

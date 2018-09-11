@@ -1,0 +1,3 @@
+# ~/go/bin/overmind start -f Procfile.prod
+server: bin/rails server
+assets: NODE_ENV=production ./bin/webpack --watch
