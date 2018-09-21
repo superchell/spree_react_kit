@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "~/go/bin/overmind start -f Procfile.dev",
+    "start:dev": "(cd client && yarn dev)",
     "start:prod": "~/go/bin/overmind start -f Procfile.prod",
     "test": "jest --config=\"./frontend/jest/jest.test.config.json\"",
     "test:watch": "npm test -- --watch",
@@ -25,6 +26,7 @@
     "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-do-expressions": "^7.0.0",
     "babel-eslint": "^9.0.0",
     "babel-jest": "^23.4.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",

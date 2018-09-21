@@ -10,6 +10,9 @@
 .ruby-version
 /log
 /tmp
+/client/node_modules/*
+/client/.next/*
+/examples/*
 
 # Ignore all logfiles and tempfiles.
 /log/*
