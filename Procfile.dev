@@ -1,4 +1,4 @@
 # ~/go/bin/overmind start -f Procfile.dev
 server: bin/rails server
 assets: bin/webpack-dev-server
-rails-server-assets: sh -c 'yarn start:dev'
+# rails-server-assets: sh -c 'yarn start:dev'
